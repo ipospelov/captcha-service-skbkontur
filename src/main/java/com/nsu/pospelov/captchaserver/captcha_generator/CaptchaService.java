@@ -5,5 +5,4 @@ public interface CaptchaService {
     CaptchaResponse generateResponse();
 
     ResponseType checkUserResponse(String requestID, String userResponse);
-
 }

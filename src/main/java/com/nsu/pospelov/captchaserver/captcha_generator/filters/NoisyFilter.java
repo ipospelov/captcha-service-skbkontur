@@ -13,27 +13,18 @@ public class NoisyFilter implements Filter {
 
     @Override
     public void apply(BufferedImage image) {
-
         Graphics2D graphics = (Graphics2D) image.getGraphics();
-
         int x1;
         int y1;
         int x2;
         int y2;
-
         graphics.setColor(Color.BLACK);
-
-        for(int i = 0; i < noiseAmount; i++){
+        for (int i = 0; i < noiseAmount; i++) {
             x1 = ThreadLocalRandom.current().nextInt(0, image.getWidth());
             y1 = ThreadLocalRandom.current().nextInt(0, image.getHeight());
-
             x2 = x1 + ThreadLocalRandom.current().nextInt(-noiseEnthropySize, noiseEnthropySize);
             y2 = y1 + ThreadLocalRandom.current().nextInt(-noiseEnthropySize, noiseEnthropySize);
-
             graphics.drawLine(x1, y1, x2, y2);
-
         }
-
     }
-
 }

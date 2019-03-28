@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class CaptchaServiceConfiguration {
 
     @Bean
-    public CaptchaService captchaService(){
+    public CaptchaService captchaService() {
         return new CaptchaServiceImpl();
     }
 }
